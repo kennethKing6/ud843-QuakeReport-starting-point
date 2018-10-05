@@ -31,15 +31,14 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        // Create a fake list of earthquakes.
-        ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
+
 
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView =  findViewById(R.id.list);
 
         // Create a new {@link ArrayAdapter} of earthquakes
         EarthquakeAdapter  adapter = new EarthquakeAdapter(
-                this,  earthquakes);
+                this,  QueryUtils.extractEarthquakes());
 
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface

@@ -78,13 +78,11 @@ public final class QueryUtils {
 //                 Extract “time” for time
 
                 long timeMilliseconds = properties.getLong("time");
-                Date dateObject = new Date(timeMilliseconds);
                 SimpleDateFormat dateFormatter = new SimpleDateFormat("MMM DD, yyyy");
-                String dateToDisplay = dateFormatter.format(dateObject);
+                String dateToDisplay = dateFormatter.format(new Date(timeMilliseconds));
 
-                Earthquake earthquake1 = new Earthquake(magnitude, location, dateToDisplay);
 //                 Create Earthquake java object from magnitude, location, and time
-                earthquakes.add(earthquake1);
+                earthquakes.add( new Earthquake(magnitude, location, dateToDisplay));
 
             }
 
